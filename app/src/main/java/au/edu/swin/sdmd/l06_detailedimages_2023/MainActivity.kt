@@ -1,5 +1,6 @@
 package au.edu.swin.sdmd.l06_detailedimages_2023
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
@@ -14,7 +15,9 @@ class MainActivity : AppCompatActivity() {
 
         val vStation = findViewById<TextView>(R.id.station)
         vStation.setOnClickListener {
-
+            val intent = Intent(this, DetailActivity::class.java)
+            intent.putExtra("location", station)
+            startActivity(intent)
         }
     }
 
